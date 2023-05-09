@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1200</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Autopark</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButtonDriver">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Водители</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRoutes">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Маршруты</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonItinerary">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Наряды</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonAutoDriver">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Закрепленные
+водители</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonAuto">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Автобусы</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1200</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>40</y>
+      <width>911</width>
+      <height>700</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0, 0, 0, 0)</string>
+    </property>
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <widget class="QWidget" name="page"/>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>881</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: black;
+	border-radius: 7px;</string>
+      </property>
+      <property name="text">
+       <string>Водители</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewDrivers">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>881</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddDriver">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Добавить...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadDriver">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Загрузить</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>881</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: black;
+	border-radius: 7px;</string>
+      </property>
+      <property name="text">
+       <string>Автобусы</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewBus">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>881</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddBus">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Добавить...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadBus">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Загрузить</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>881</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: black;
+	border-radius: 7px;
+
+</string>
+      </property>
+      <property name="text">
+       <string>Закрепленные водители</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewAD">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>881</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddAD">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Добавить...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadAD">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Загрузить</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>881</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: black;
+	border-radius: 7px;</string>
+      </property>
+      <property name="text">
+       <string>Наряды</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewItinerary">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>881</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddItinerary">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Добавить...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadItinerary">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Загрузить</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>881</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-width: 1px;
+    border-style: solid;
+    border-color: black;
+	border-radius: 7px;</string>
+      </property>
+      <property name="text">
+       <string>Маршруты</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableViewRoutes">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>881</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::CustomContextMenu</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAddRoutes">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Добавить...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLoadRoutes">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>530</y>
+        <width>161</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+      </property>
+      <property name="text">
+       <string>Загрузить</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>900</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+    border-color: black;
+	border-radius: 7px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>frame</zorder>
+   <zorder>pushButtonDriver</zorder>
+   <zorder>pushButtonRoutes</zorder>
+   <zorder>pushButtonItinerary</zorder>
+   <zorder>pushButtonAutoDriver</zorder>
+   <zorder>pushButtonAuto</zorder>
+   <zorder>stackedWidget</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar{
+	background: #EDEDED;}</string>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="styleSheet">
+     <string notr="true">QMenu:hover{
+	background: #666;
+	color: black;
+}
+</string>
+    </property>
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="actionQuery"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Подключится к БД</string>
+   </property>
+  </action>
+  <action name="actionQuery">
+   <property name="text">
+    <string>Запросы</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
