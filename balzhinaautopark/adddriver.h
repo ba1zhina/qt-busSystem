@@ -25,6 +25,7 @@ public:
     QSqlDatabase DB;
     QMessageBox *msg;
 
+
 private slots:
     void on_pushButton_clicked();
 

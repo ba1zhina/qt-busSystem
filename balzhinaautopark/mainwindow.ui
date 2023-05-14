@@ -35,7 +35,7 @@
    <widget class="QPushButton" name="pushButtonDriver">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>40</y>
       <width>231</width>
       <height>61</height>
@@ -65,7 +65,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="pushButtonRoutes">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>320</y>
       <width>231</width>
       <height>61</height>
@@ -95,7 +95,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="pushButtonItinerary">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>250</y>
       <width>231</width>
       <height>61</height>
@@ -125,7 +125,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="pushButtonAutoDriver">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>180</y>
       <width>231</width>
       <height>61</height>
@@ -156,7 +156,7 @@ QPushButton:pressed{
    <widget class="QPushButton" name="pushButtonAuto">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>110</y>
       <width>231</width>
       <height>61</height>

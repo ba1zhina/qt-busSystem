@@ -148,27 +148,27 @@ void MainWindow::ModRecAction(int selectedID, TableViewVariant selectedTable)
 {
     switch (selectedTable) {
     case drivers:{
-        UpdateDrivers = new updateDrivers();
+        UpdateDrivers = new updateDrivers(selectedID);
         UpdateDrivers->show();
         break;
     }
     case automobiles:{
-        UpdateAutomobiles = new updateAutomobiles();
+        UpdateAutomobiles = new updateAutomobiles(selectedID);
         UpdateAutomobiles->show();
         break;
     }
     case routes:{
-        UpdateRoutes = new updateRoutes();
+        UpdateRoutes = new updateRoutes(selectedID);
         UpdateRoutes->show();
         break;
     }
     case automobiles_drivers:{
-        UpdateAutomobilesDrivers = new updateAD();
+        UpdateAutomobilesDrivers = new updateAD(selectedID);
         UpdateAutomobilesDrivers->show();
         break;
     }
     case itinerary:{
-        UpdateItinerary = new updateItinerary();
+        UpdateItinerary = new updateItinerary(selectedID);
         UpdateItinerary->show();
         break;
     }
@@ -251,6 +251,7 @@ void MainWindow::LoadDriversTable(){
     delete tableView->model();
 
     this->ui->tableViewDrivers->setModel(DBquery->selectDriverTable());
+    ui->tableViewDrivers->setColumnHidden(0,true);
 }
 
 void MainWindow::LoadAutomobilesTable(){
@@ -258,6 +259,7 @@ void MainWindow::LoadAutomobilesTable(){
     delete tableView->model();
 
     this->ui->tableViewBus->setModel(DBquery->selectAutoTable());
+    ui->tableViewBus->setColumnHidden(0,true);
 
 }
 
@@ -266,6 +268,7 @@ void MainWindow::LoadADTable(){
     delete tableView->model();
 
     this->ui->tableViewAD->setModel(DBquery->selectADTable());
+    ui->tableViewAD->setColumnHidden(0,true);
 }
 
 void MainWindow::LoadRoutesTable(){
@@ -273,6 +276,7 @@ void MainWindow::LoadRoutesTable(){
     delete tableView->model();
 
     this->ui->tableViewRoutes->setModel(DBquery->selectRoutesTable());
+    ui->tableViewRoutes->setColumnHidden(0,true);
 }
 
 void MainWindow::LoadItineraryTable(){
@@ -280,6 +284,8 @@ void MainWindow::LoadItineraryTable(){
     delete tableView->model();
 
     this->ui->tableViewItinerary->setModel(DBquery->selectItineraryTable());
+    ui->tableViewItinerary->setColumnHidden(0,true);
+
 }
 
 
