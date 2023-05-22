@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>700</height>
+    <width>1216</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -22,14 +22,12 @@
     <height>600</height>
    </size>
   </property>
-  <property name="maximumSize">
-   <size>
-    <width>1200</width>
-    <height>700</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Autopark</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/new/img/icon.jpg</normaloff>:/new/img/icon.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButtonDriver">
@@ -188,12 +186,12 @@ QPushButton:pressed{
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1200</width>
-      <height>900</height>
+      <width>16777215</width>
+      <height>16777215</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
@@ -223,7 +221,7 @@ QPushButton:pressed{
      <string notr="true">background-color: rgba(0, 0, 0, 0)</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page"/>
     <widget class="QWidget" name="page_2">
@@ -328,7 +326,7 @@ QPushButton:pressed{
 	background: #00598C;}</string>
       </property>
       <property name="text">
-       <string>Загрузить</string>
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -434,7 +432,7 @@ QPushButton:pressed{
 	background: #00598C;}</string>
       </property>
       <property name="text">
-       <string>Загрузить</string>
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -542,7 +540,7 @@ QPushButton:pressed{
 	background: #00598C;}</string>
       </property>
       <property name="text">
-       <string>Загрузить</string>
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -648,7 +646,7 @@ QPushButton:pressed{
 	background: #00598C;}</string>
       </property>
       <property name="text">
-       <string>Загрузить</string>
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -754,7 +752,7 @@ QPushButton:pressed{
 	background: #00598C;}</string>
       </property>
       <property name="text">
-       <string>Загрузить</string>
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -781,6 +779,52 @@ border-style: solid;
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonRoutes_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>570</y>
+      <width>231</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #0089D9;
+	border: none;
+	color: white;
+	border-radius: 7px;
+}
+
+QPushButton:pressed{
+	background: #00598C;}</string>
+    </property>
+    <property name="text">
+     <string>Выход</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>390</y>
+      <width>251</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/new/img/buss.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>frame</zorder>
    <zorder>pushButtonDriver</zorder>
@@ -789,13 +833,15 @@ border-style: solid;
    <zorder>pushButtonAutoDriver</zorder>
    <zorder>pushButtonAuto</zorder>
    <zorder>stackedWidget</zorder>
+   <zorder>pushButtonRoutes_2</zorder>
+   <zorder>label_7</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1200</width>
+     <width>1216</width>
      <height>26</height>
     </rect>
    </property>
@@ -834,6 +880,8 @@ border-style: solid;
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

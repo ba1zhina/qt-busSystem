@@ -29,7 +29,7 @@ QSqlQueryModel* AddAD::ComboboxModelBus()
 QSqlQueryModel* AddAD::ComboboxModelDrivers()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select name from s_automobiles_drivers");
+    model->setQuery("SELECT * FROM get_driver_names();");
     return model;
 }
 
@@ -81,7 +81,7 @@ void AddAD::on_pushButton_clicked()
         qDebug() << "Произошла ошибка при выполнении запроса: " << query.lastError().text();
     }
     else{
-        msg->setText("Запись добавлена");
+        msg->setText("Запись добавлена. Обновите данные.");
         close();
     }
     msg->show();

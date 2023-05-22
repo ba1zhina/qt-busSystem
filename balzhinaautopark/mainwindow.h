@@ -82,6 +82,8 @@ private slots:
     void LoadItineraryTable();
 
 
+    void on_pushButtonRoutes_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     connectionDialog *conwindow;

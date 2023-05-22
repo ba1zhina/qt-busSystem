@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Закрепление</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/new/img/icon.jpg</normaloff>:/new/img/icon.jpg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -124,6 +128,8 @@ QPushButton:pressed{
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

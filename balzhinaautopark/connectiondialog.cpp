@@ -24,14 +24,14 @@ void connectionDialog::on_pushButtonConnection_clicked()
 
     msg = new QMessageBox();
     if (db.open()) {
-        msg->setText("Соединение установлено");
         close();
     }
     else
     {
        msg->setText("Соединение НЕ установлено");
+       msg->show();
 
     }
-    msg->show();
+
 }
 

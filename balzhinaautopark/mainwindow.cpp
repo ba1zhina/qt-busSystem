@@ -289,3 +289,9 @@ void MainWindow::LoadItineraryTable(){
 }
 
 
+
+void MainWindow::on_pushButtonRoutes_2_clicked()
+{
+    close();
+}
+

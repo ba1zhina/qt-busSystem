@@ -30,7 +30,7 @@ QSqlQueryModel *dbquery::selectADTable()
 QSqlQueryModel *dbquery::selectItineraryTable()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from s_itinerary");
+    model->setQuery("select * from s_itinerary order by id");
     return model;
 }
 

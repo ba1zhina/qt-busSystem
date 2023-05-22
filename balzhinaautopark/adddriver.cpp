@@ -80,7 +80,7 @@ void AddDriver::on_pushButton_clicked()
         qDebug() << "Произошла ошибка при выполнении запроса: " << query->lastError().text();
     }
     else{
-        msg->setText("Запись добавлена");
+        msg->setText("Запись изменена. Обновите данные.");
         close();
     }
     msg->show();

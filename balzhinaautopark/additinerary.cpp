@@ -21,13 +21,13 @@ AddItinerary::~AddItinerary()
 
 QSqlQueryModel *AddItinerary::ComboBoxRoutes(){
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select routes from s_itinerary");
+    model->setQuery("select * from get_routes_locality()");
     return model;
 }
 
 QSqlQueryModel *AddItinerary::ComboBoxAD(){
     QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select (name||' '|| number) from s_itinerary");
+    model->setQuery("select concat(name,' ',number) from s_automobiles_drivers");
     return model;
 }
 
@@ -35,7 +35,7 @@ QSqlQueryModel *AddItinerary::ComboBoxAD(){
 int AddItinerary::IdRoutesComboBox(QString RoutesStartEnd){
     int id_routes = 0;
     QSqlQuery query;
-    query.prepare("select id from routes where (start_locality||' - '||end_locality) = :route");
+    query.prepare("select id from routes where concat(start_locality,' - ',end_locality) = :route");
     query.bindValue(":route", RoutesStartEnd);
     if (query.exec() && query.next())
     {
@@ -50,7 +50,7 @@ int AddItinerary::IdAutoComboBox(QString AutoDriver)
 {
     int id_ad = 0;
     QSqlQuery query;
-    query.prepare("select id from s_itinerery_a_d where name_number = :AutoDriver");
+    query.prepare("select id from s_automobiles_drivers where concat(name,' ',number) = :AutoDriver");
     query.bindValue(":AutoDriver",AutoDriver);
 
     if (query.exec() && query.next())
@@ -87,7 +87,7 @@ void AddItinerary::on_pushButton_clicked()
         qDebug() << "Произошла ошибка при выполнении запроса: " << query.lastError().text();
     }
     else{
-        msg->setText("Запись добавлена");
+        msg->setText("Запись добавлена. Обновите данные.");
         close();
     }
     msg->show();
