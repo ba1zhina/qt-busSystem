@@ -28,15 +28,15 @@ void AddAutomobiles::on_pushButton_clicked()
     }
 
 
-    static QRegularExpression regExp("^([a-zA-Z]+|\\d+|[a-zA-Z0-9 ]+)$");
+    static QRegularExpression regExp("^[a-zA-Zа-яА-Я0-9 ]+$");
 
     if (!regExp.match(Maker).hasMatch()) {
-        QMessageBox::warning(this, "Ошибка", "Поле 'Производитель' должно содержать только цифры или латиницу");
+        QMessageBox::warning(this, "Ошибка", "Поле 'Производитель' должно содержать только цифры или латиницу или кириллицу");
         return;
     }
 
     if (!regExp.match(Model).hasMatch()) {
-        QMessageBox::warning(this, "Ошибка", "Поле 'Модель' должно содержать только цифры или латиницу");
+        QMessageBox::warning(this, "Ошибка", "Поле 'Модель' должно содержать только цифры или латиницу или кириллицу");
         return;
     }
 
@@ -64,12 +64,12 @@ void AddAutomobiles::on_pushButton_clicked()
 
     if (!query->exec()) {
         msg->setText("Запись НЕ добавлена");
+        msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query->lastError().text();
     }
-    else{
-        msg->setText("Запись изменена. Обновите данные.");
-        close();
-    }
-    msg->show();
+    else{close();}
+
+    emit refreshTableAutomobiles();
+
 }
 

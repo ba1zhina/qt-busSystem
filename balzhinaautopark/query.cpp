@@ -13,12 +13,6 @@ query::~query()
     delete ui;
 }
 
-void query::on_pushButtonView_clicked()
-{
-
-}
-
-
 
 
 void query::on_pushButtonCase_clicked()

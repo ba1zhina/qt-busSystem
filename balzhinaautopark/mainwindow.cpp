@@ -34,6 +34,7 @@ void MainWindow::on_actionQuery_triggered()
 void MainWindow::on_pushButtonAddDriver_clicked()
 {
     AddDriverWin = new AddDriver();
+    connect(AddDriverWin,SIGNAL(refreshTableDriver()),this,SLOT(buttonRefreshDriver()));
     AddDriverWin->show();
 }
 
@@ -41,6 +42,7 @@ void MainWindow::on_pushButtonAddDriver_clicked()
 void MainWindow::on_pushButtonAddBus_clicked()
 {
     AddAutomobilesWin = new AddAutomobiles();
+    connect(AddAutomobilesWin,SIGNAL(refreshTableAutomobiles()),this,SLOT(buttonRefreshAutomobiles()));
     AddAutomobilesWin->show();
 }
 
@@ -48,6 +50,7 @@ void MainWindow::on_pushButtonAddBus_clicked()
 void MainWindow::on_pushButtonAddAD_clicked()
 {
     AddADWin = new AddAD();
+    connect(AddADWin,SIGNAL(refreshTableAD()),this,SLOT(buttonRefreshAD()));
     AddADWin->show();
 }
 
@@ -55,6 +58,7 @@ void MainWindow::on_pushButtonAddAD_clicked()
 void MainWindow::on_pushButtonAddItinerary_clicked()
 {
     AddItineraryWin = new AddItinerary();
+    connect(AddItineraryWin,SIGNAL(refreshTableItinerary()),this,SLOT(buttonRefreshItinerary()));
     AddItineraryWin->show();
 }
 
@@ -62,6 +66,7 @@ void MainWindow::on_pushButtonAddItinerary_clicked()
 void MainWindow::on_pushButtonAddRoutes_clicked()
 {
     AddRoutesWin =  new AddRoutes();
+    connect(AddRoutesWin,SIGNAL(refreshTableRoutes()),this,SLOT(buttonRefreshRoute()));
     AddRoutesWin->show();
 }
 
@@ -91,6 +96,12 @@ void MainWindow::on_pushButtonLoadBus_clicked(){LoadAutomobilesTable();}
 void MainWindow::on_pushButtonLoadAD_clicked(){LoadADTable();}
 void MainWindow::on_pushButtonLoadItinerary_clicked(){LoadItineraryTable();}
 void MainWindow::on_pushButtonLoadRoutes_clicked(){LoadRoutesTable();}
+
+void MainWindow::buttonRefreshDriver(){LoadDriversTable();}
+void MainWindow::buttonRefreshAutomobiles(){LoadAutomobilesTable();}
+void MainWindow::buttonRefreshRoute(){LoadRoutesTable();}
+void MainWindow::buttonRefreshAD(){LoadADTable();}
+void MainWindow::buttonRefreshItinerary(){LoadItineraryTable();}
 
 
 QString TableName(TableViewVariant TableVariant)
@@ -149,26 +160,31 @@ void MainWindow::ModRecAction(int selectedID, TableViewVariant selectedTable)
     switch (selectedTable) {
     case drivers:{
         UpdateDrivers = new updateDrivers(selectedID);
+        connect(UpdateDrivers,SIGNAL(refreshTableDriver()),this,SLOT(buttonRefreshDriver()));
         UpdateDrivers->show();
         break;
     }
     case automobiles:{
         UpdateAutomobiles = new updateAutomobiles(selectedID);
+        connect(UpdateAutomobiles,SIGNAL(refreshTableAutomobiles()),this,SLOT(buttonRefreshAutomobiles()));
         UpdateAutomobiles->show();
         break;
     }
     case routes:{
         UpdateRoutes = new updateRoutes(selectedID);
+        connect(UpdateRoutes,SIGNAL(refreshTableRoutes()),this,SLOT(buttonRefreshRoute()));
         UpdateRoutes->show();
         break;
     }
     case automobiles_drivers:{
         UpdateAutomobilesDrivers = new updateAD(selectedID);
+        connect(UpdateAutomobilesDrivers,SIGNAL(refreshTableAD()),this,SLOT(buttonRefreshAD()));
         UpdateAutomobilesDrivers->show();
         break;
     }
     case itinerary:{
         UpdateItinerary = new updateItinerary(selectedID);
+        connect(UpdateItinerary,SIGNAL(refreshTableItinerary()),this,SLOT(buttonRefreshItinerary()));
         UpdateItinerary->show();
         break;
     }
@@ -289,9 +305,14 @@ void MainWindow::LoadItineraryTable(){
 }
 
 
-
 void MainWindow::on_pushButtonRoutes_2_clicked()
 {
     close();
 }
+
+void MainWindow::showWindow()
+{
+    show();
+}
+
 

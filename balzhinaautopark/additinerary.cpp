@@ -84,13 +84,12 @@ void AddItinerary::on_pushButton_clicked()
 
     if (!query.exec()) {
         msg->setText("Запись НЕ добавлена");
+        msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query.lastError().text();
     }
-    else{
-        msg->setText("Запись добавлена. Обновите данные.");
-        close();
-    }
-    msg->show();
+    else{close();}
+
+    emit refreshTableItinerary();
 }
 
 

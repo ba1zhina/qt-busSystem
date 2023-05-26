@@ -47,6 +47,8 @@ public:
     ~MainWindow();
     QSqlDatabase DB;
 
+public slots:
+    void showWindow();
 private slots:
     void on_action_triggered();
     void on_actionQuery_triggered();
@@ -81,6 +83,11 @@ private slots:
     void LoadRoutesTable();
     void LoadItineraryTable();
 
+    void buttonRefreshDriver();
+    void buttonRefreshAutomobiles();
+    void buttonRefreshRoute();
+    void buttonRefreshAD();
+    void buttonRefreshItinerary();
 
     void on_pushButtonRoutes_2_clicked();
 

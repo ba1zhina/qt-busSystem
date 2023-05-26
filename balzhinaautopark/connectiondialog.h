@@ -19,7 +19,8 @@ public:
     ~connectionDialog();
     QMessageBox *msg;
 
-
+signals:
+    void connectedSignal();
 private slots:
     void on_pushButtonConnection_clicked();
 

@@ -24,7 +24,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
+signals:
+    void refreshTableItinerary();
 private:
     Ui::updateItinerary *ui;
     int id_itenerary;

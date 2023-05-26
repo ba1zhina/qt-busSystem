@@ -34,57 +34,26 @@ QSqlQueryModel* AddAD::ComboboxModelDrivers()
 }
 
 
-int AddAD::IdBusComboBox(QString BusNumber)
-{
-    int id_bus = 0;
-    QSqlQuery query;
-    query.prepare("SELECT id FROM automobiles WHERE number = :bus");
-    query.bindValue(":bus", BusNumber);
-    if (query.exec() && query.next())
-    {
-        id_bus = query.value(0).toInt();
-    }
-
-    return id_bus;
-}
-
-
-int AddAD::IdDriverComboBox(QString DriverNumber){
-    int id_driver = 0;
-    QSqlQuery query;
-    query.prepare("select id from drivers where (name||' '||lastname) = :driver");
-    query.bindValue(":driver", DriverNumber);
-    if (query.exec() && query.next())
-    {
-        id_driver = query.value(0).toInt();
-    }
-
-    return id_driver;
-}
 
 void AddAD::on_pushButton_clicked()
 {
     QString selectedBus = ui->comboBoxBus->currentText();
-    int id_bus = NewModel->IdBusComboBox(selectedBus);
     QString selectedDriver = ui->comboBoxDriver->currentText();
-    int id_driver = NewModel->IdDriverComboBox(selectedDriver);
 
     QSqlQuery query;
-    query.prepare("select public.add_automobiles_drivers(:bus,:driver)");
-    query.bindValue(":bus", id_bus);
-    query.bindValue(":driver", id_driver);
+    query.prepare("select public.add_s_automobiles_drivers(:name,:number)");
+    query.bindValue(":number", selectedBus);
+    query.bindValue(":name", selectedDriver);
 
     msg = new QMessageBox();
 
     if (!query.exec()) {
-        msg->setText("Запись НЕ добавлена");
+        msg->setText("Запись НЕ добавлена.");
+        msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query.lastError().text();
     }
-    else{
-        msg->setText("Запись добавлена. Обновите данные.");
-        close();
-    }
-    msg->show();
+    else{close();}
 
+    emit refreshTableAD();
 }
 

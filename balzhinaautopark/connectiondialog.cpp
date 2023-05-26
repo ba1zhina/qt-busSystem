@@ -25,6 +25,7 @@ void connectionDialog::on_pushButtonConnection_clicked()
     msg = new QMessageBox();
     if (db.open()) {
         close();
+        emit connectedSignal();
     }
     else
     {

@@ -91,14 +91,11 @@ void updateDrivers::on_pushButton_clicked()
 
     if (!query->exec()) {
         msg->setText("Запись НЕ изменена");
+        msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query->lastError().text();
     }
-    else{
-        msg->setText("Запись изменена. Обновите данные.");
-        close();
-
-    }
-    msg->show();
+    else{close();}
+    emit refreshTableDriver();
 
 }
 

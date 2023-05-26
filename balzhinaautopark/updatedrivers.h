@@ -23,6 +23,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+signals:
+    void refreshTableDriver();
 
 private:
     Ui::updateDrivers *ui;

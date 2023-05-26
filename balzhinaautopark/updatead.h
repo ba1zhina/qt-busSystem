@@ -27,7 +27,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
+signals:
+    void refreshTableAD();
 private:
     Ui::updateAD *ui;
     int id_ad;
@@ -38,8 +39,6 @@ private:
 
     QSqlQueryModel* ComboboxModelDrivers();
     QSqlQueryModel* ComboboxModelBus();
-    int IdDriverComboBox(QString DriverNumber);
-    int IdBusComboBox(QString BusNumber);
 
 };
 
