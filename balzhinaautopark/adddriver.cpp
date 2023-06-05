@@ -58,7 +58,7 @@ void AddDriver::on_pushButton_clicked()
 
     static QRegularExpression regExpNumber("^\\d{10}$");
     if (!regExpNumber.match(Licencenumber).hasMatch()) {
-        QMessageBox::warning(this, "Ошибка", "Поле 'Номер водительского удостоверения' должно содержать только цифры");
+        QMessageBox::warning(this, "Ошибка", "Поле 'Номер водительского удостоверения' должно содержать только 10 цифр.");
         return;
     }
 
@@ -76,7 +76,7 @@ void AddDriver::on_pushButton_clicked()
     msg = new QMessageBox();
 
     if (!query->exec()) {
-        msg->setText("Запись НЕ добавлена");
+        msg->setText("Запись НЕ добавлена. У вас нет прав на совершение этого действия.");
         msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query->lastError().text();
     }

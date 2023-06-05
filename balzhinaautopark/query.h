@@ -17,7 +17,6 @@ public:
     ~query();
 
 private slots:
-    void on_pushButtonCase_clicked();
     void on_pushButtonSqSelect_clicked();
     void on_pushButtonSqFrom_clicked();
     void on_pushButtonSqWhere_clicked();

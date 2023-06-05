@@ -72,7 +72,7 @@ void MainWindow::on_pushButtonAddRoutes_clicked()
 
 void MainWindow::on_pushButtonDriver_clicked(){
     ui->stackedWidget->setCurrentIndex(1);
-    LoadDriversTable();
+     LoadDriversTable();
 }
 void MainWindow::on_pushButtonAuto_clicked(){
     ui->stackedWidget->setCurrentIndex(2);
@@ -276,6 +276,7 @@ void MainWindow::LoadAutomobilesTable(){
 
     this->ui->tableViewBus->setModel(DBquery->selectAutoTable());
     ui->tableViewBus->setColumnHidden(0,true);
+    ui->tableViewBus->setColumnHidden(5,true);
 
 }
 

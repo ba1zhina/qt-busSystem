@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1042</width>
-    <height>587</height>
+    <height>625</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,7 +26,7 @@
      <x>200</x>
      <y>70</y>
      <width>821</width>
-     <height>491</height>
+     <height>531</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -66,9 +66,9 @@ alternate-background-color: rgb(222, 222, 222);</string>
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>520</y>
+     <y>550</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -92,43 +92,13 @@ QPushButton:pressed{
     <string>ANY</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonCase">
+  <widget class="QPushButton" name="pushButtonSqSelect">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>70</y>
      <width>171</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
-	background-color: #0089D9;
-	border: none;
-	color: white;
-	border-radius: 7px;
-}
-
-QPushButton:pressed{
-	background: #00598C;}</string>
-   </property>
-   <property name="text">
-    <string>CASE</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonSqSelect">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>120</y>
-     <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -156,9 +126,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>470</y>
+     <y>490</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -186,9 +156,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>420</y>
+     <y>430</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -218,7 +188,7 @@ QPushButton:pressed{
      <x>10</x>
      <y>370</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -246,9 +216,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>320</y>
+     <y>310</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -276,9 +246,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
+     <y>250</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -306,9 +276,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>220</y>
+     <y>190</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -336,9 +306,9 @@ QPushButton:pressed{
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>170</y>
+     <y>130</y>
      <width>171</width>
-     <height>41</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">

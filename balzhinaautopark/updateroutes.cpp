@@ -67,7 +67,7 @@ void updateRoutes::on_pushButton_clicked()
     msg = new QMessageBox();
 
     if (!query->exec()) {
-        msg->setText("Запись НЕ изменена");
+        msg->setText("Запись НЕ изменена. У вас нет прав на совершение этого действия.");
         msg->show();
         qDebug() << "Произошла ошибка при выполнении запроса: " << query->lastError().text();
     }

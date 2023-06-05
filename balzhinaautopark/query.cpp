@@ -14,15 +14,6 @@ query::~query()
 }
 
 
-
-void query::on_pushButtonCase_clicked()
-{
-    QSqlQueryModel *model = new QSqlQueryModel();
-    model->setQuery("select * from case_query");
-    ui->tableViewQuery->setModel(model);
-}
-
-
 void query::on_pushButtonSqSelect_clicked()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
